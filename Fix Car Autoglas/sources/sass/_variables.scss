@@ -1,0 +1,27 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+
+$default-font: 'Raleway', sans-serif;
+
+$default: #000;
+$contrast: #fff;
+
+//#232a33
+$default-variant-1: lighten(saturate(adjust_hue($default, 213.75), 18.6046511627907%), 16.862745098039216%);;
+
+$white: #fff;
+
+$primary: #1caffc;
+
+$border-radius-base: 2px;
+$border-radius-large: 5px;
+
+$box-shadow-ambient: 0 0 2px 0 rgba(#000, .11);
+$box-shadow-key-light: 3px 4px 5px 0 rgba(#000, .11);
+
+$screen-xs-min: 480px;
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;

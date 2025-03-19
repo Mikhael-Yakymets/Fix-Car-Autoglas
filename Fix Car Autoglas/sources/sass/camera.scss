@@ -1,0 +1,293 @@
+﻿/**
+* @subsection   Camera.css
+*
+* @description   a jQuery slideshow with many effects, transitions, easy to customize, using canvas and mobile ready, *based on jQuery 1.4+
+*
+* @author       Manuel Masia
+* @link         www.pixedelic.com
+* @license      MIT license - http://www.opensource.org/licenses/mit-license.php
+**/
+@import "_mixins.scss";
+@import "_variables.scss";
+
+$minHeight: 725px;
+$ratio: 0.4091796875;
+
+.camera_container {
+  position: relative;
+}
+.camera_container {
+  @media (min-width: $screen-md-min) {
+    padding-bottom: $minHeight;
+  }
+  @media (min-width: ($minHeight / $ratio)) {
+    padding-bottom: ($ratio * 100%);
+  }
+}
+@mixin camera-abs() {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.camera_wrap {
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: 0 !important;
+  height: 100%;
+  background: #fff;
+  z-index: 0;
+  @media (min-width: $screen-md-min) {
+    position: absolute;
+  }
+  @media (max-width: 767px) {
+    height: 525px !important;
+  }
+}
+
+.camera_wrap img {
+  max-width: none !important;
+}
+
+.camera_fakehover {
+  height: 100%;
+  min-height: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.camera_src {
+  display: none;
+}
+
+.cameraCont, .cameraContents {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  @include flexbox();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+.cameraSlide {
+  @include camera-abs();
+  color: $contrast;
+}
+
+.cameraContent {
+  display: none;
+  h4{
+    @media (min-width: 1300px) {
+      line-height: 1.5833;
+    }
+  }
+}
+
+.camera_target {
+  @include camera-abs();
+  overflow: hidden;
+  text-align: left;
+  z-index: 0;
+}
+
+.camera_overlayer {
+  @include camera-abs();
+  overflow: hidden;
+  z-index: 0;
+}
+
+.camera_target_content {
+  @include camera-abs();
+  overflow: hidden;
+  z-index: 2;
+}
+
+.camera_loader {
+  background: #fff url(../images/camera-loader.gif) no-repeat center;
+  border: 1px solid #ffffff;
+  border-radius: 18px;
+  height: 36px;
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  margin: -18px 0 0 -18px;
+  top: 50%;
+  width: 36px;
+  z-index: 3;
+}
+
+.camera_nav_cont {
+  height: 65px;
+  overflow: hidden;
+  position: absolute;
+  right: 9px;
+  top: 15px;
+  width: 120px;
+  z-index: 4;
+}
+
+.camerarelative {
+  overflow: hidden;
+  position: relative;
+}
+
+.imgFake {
+  cursor: pointer;
+}
+
+.camera_command_wrap .hideNav {
+  display: none;
+}
+
+.camera_command_wrap {
+  left: 0;
+  position: relative;
+  right: 0;
+  z-index: 4;
+}
+
+.showIt {
+  display: none;
+}
+
+.camera_clear {
+  clear: both;
+  display: block;
+  height: 1px;
+  margin: -1px 0 25px;
+  position: relative;
+}
+
+.camera_caption {
+  display: none;
+}
+
+.cameraContent .camera_caption {
+  display: block;
+}
+
+/*================   Custom Layout&Styles   =====================*/
+.camera_caption {
+  color: $contrast;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+  > div {
+    height: 100%;
+  }
+}
+
+.camera_pag {
+  @include container-fixed($grid-gutter-width);
+  min-width: $container-xs;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+  &_ul {
+    position: relative;
+    top: -50px;
+    text-align: center;
+    @media (min-width: 768px) {
+      top: -100px;
+      text-align: left;
+    }
+    li {
+      display: inline-block;
+      position: relative;
+      width: 21px;
+      height: 21px;
+      line-height: 21px;
+      text-align: center;
+      cursor: pointer;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      background-color: rgba(0,0,0, 0);
+      border: 3px solid $primary;
+      @include transition(.3s all ease);
+
+      &.cameracurrent, &:hover {
+        background: $primary;
+      }
+
+      & + li {
+        margin-left: 11px;
+      }
+
+      > span {
+        display: none;
+      }
+    }
+  }
+}
+
+.camera_next {
+
+}
+
+.camera_prev {
+
+}
+.onCamera-abs{
+  padding-top: 30px;
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0px;
+    padding: 0;
+  }
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  @include flexbox();
+  @include align-items(center);
+  // @include justify-content(center);
+  pointer-events: none;
+}
+.onCamera__cnt{
+  pointer-events: all;
+}
+.onCamera{
+  @include container-fixed($grid-gutter-width);
+  min-width: $container-xs;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+  z-index: 999;
+  * + .rd-mailform{
+    margin-top: 22px;
+  }
+  .booking-form{
+    float: right;
+  }
+  padding-left: 15px;
+  padding-right: 15px;
+
+  z-index: 999;
+  .bg-primary{
+    background-color: rgba($primary, .85);
+  }
+  h3{
+    letter-spacing: 0.06em;
+  }
+}
+

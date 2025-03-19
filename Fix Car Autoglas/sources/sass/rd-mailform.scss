@@ -1,0 +1,143 @@
+/*
+* @subsection   RD Mail Form
+*
+* @description  Describes style declarations for RD Mail Form extension
+*
+* @author       Evgeniy Gusarov
+* @link         https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      1.1.2
+*/
+@import "_mixins.scss";
+@import "_variables.scss";
+
+$input-height: 50px;
+$input-font-weight: 400;
+$input-font-size: 18px;
+$input-line-height: 34px;
+
+$input-offset-top: 20px;
+
+$input-color: $default;
+$input-background: $contrast;
+
+$input-border-radius: $border-radius-base;
+$input-border: 2px solid #0688cc;
+
+$input-padding: ($input-height - $input-line-height) / 2 18px;
+
+@if ($input-border != none) {
+  $input-padding: ($input-height - $input-line-height - (nth($input-border, 1) * 2)) / 2 18px;
+}
+
+$textarea-height: 191px;
+
+$placeholder-clr: $input-color;
+$placeholder-opacity: 1;
+
+.rd-mailform {
+  position: relative;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+
+  fieldset {
+    border: none;
+
+    > .row + .row{
+      margin-top: $input-offset-top;
+    }
+  }
+}
+
+.rd-mailform label {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  input, select {
+    height: $input-height;
+  }
+
+  input, select, textarea {
+    display: block;
+    width: 100%;
+    margin: 0;
+    -webkit-appearance: none;
+    font-size: $input-font-size;
+    padding: $input-padding;
+    line-height: $input-line-height;
+    color: $input-color;
+    background: $input-background;
+    font-family: $default-font;
+
+    @if ($input-border != none) {
+      border: $input-border;
+      border-radius: $input-border-radius;
+    }
+
+    &:-moz-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+
+    &::-moz-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+
+    &:-ms-input-placeholder {
+      color: $placeholder-clr;
+      opacity: $placeholder-opacity;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    min-height: $input-height;
+    height: $textarea-height;
+    max-height: $textarea-height * 1.5;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    margin-top: $input-offset-top;
+  }
+}
+
+/*
+* MF Controls
+*/
+
+.rd-mailform .mfControls {
+  margin-top: 30px;
+  button {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+  }
+}
+.booking-form{
+  @media (min-width: 1200px) {
+    width: 369px;
+  }
+}
+@import "mailform_modules/_mf-animation.scss";
+@import "mailform_modules/_mf-placeholder.scss";
+@import "mailform_modules/_mf-validation.scss";
+@import "mailform_modules/_mf-submit.scss";
+@import "mailform_modules/_mf-icon.scss";
+@import "mailform_modules/_mf-select.scss";
+@import "mailform_modules/_mf-datepicker.scss";
