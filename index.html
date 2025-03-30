@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/camera.css" />
     <link rel="stylesheet" href="css/owl-carousel.css" />
     <link rel="stylesheet" href="css/google-map.css" />
+    <link rel="stylesheet" href="css/hero.css" />
 
     <script src="js/jquery.js"></script>
     <script src="js/jquery-migrate-1.2.1.js"></script>
@@ -73,84 +74,24 @@
                             CONTENT
   =========================================================-->
       <main>
-        <!-- Camera -->
-        <section class="camera_container">
-          <div id="camera" class="camera_wrap">
-            <!-- Camera item -->
-            <div data-src="images/img01.jpg">
-              <div class="camera_caption fadeIn">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-8 col-sm-6">
-                      <h1>
-                        Service, Repair
-                        <br />
-                        and store
-                      </h1>
-                      <h4>
-                        Auto Repair is committed to earning your
-                        <br class="visible-md" />
-                        trust by providing the expertise, value
-                        <br class="visible-md" />
-                        and responsiveness you expect.
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- END Camera item -->
-            <!-- Camera item -->
-            <div data-src="images/img02.jpg">
-              <div class="camera_caption fadeIn">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-8 col-sm-6">
-                      <h1>
-                        Cooling
-                        <br />
-                        System Service
-                        <br />
-                        <span class="text-primary"> $20 Off* </span>
-                      </h1>
-                      <h4>
-                        Cooling System Pressure Test
-                        <br class="visible-md" />
-                        Inspection of Belts and Hoses
-                        <br class="visible-md" />
-                        Machine Flush Cooling System
-                        <br class="visible-md" />
-                        New Coolant
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- END Camera item -->
-            <!-- Camera item -->
-            <div data-src="images/img03.jpg">
-              <div class="camera_caption fadeIn">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-8 col-sm-6">
-                      <h1>
-                        Wheel
-                        <br />
-                        Alignments -
-                        <br />
-                        <span class="text-primary"> $10 Off </span>
-                      </h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- END Camera item -->
+        <!--#region Hero-->
+        <section class="section section-hero">
+          <div class="container">
+            <h1 class="hero-title">Hanswin Autoglas</h1>
+            <h2 class="hero-title-text">
+              WIR ERSETZEN IHRE AUTOSCHEIBEN IM ZENTRUM VON DÜSSELDORF
+            </h2>
+            <button
+              class="button-section-hero"
+              type="button"
+              onclick="location.href='#kontakt-id'"
+            >
+              Kontakt
+            </button>
           </div>
-          <div class="onCamera-abs"></div>
         </section>
-        <!-- END Camera -->
+
+        <!--#endregion Hero-->
 
         <!-- Section -->
         <!-- END Section -->
@@ -187,7 +128,7 @@
   =========================================================-->
       <footer class="well-xs">
         <div class="container">
-          <h2 class="text-center">Kontakt</h2>
+          <h2 class="text-center" id="kontakt-id">Kontakt</h2>
           <div class="row offset-2">
             <div class="col-sm-6 col-sm-push-6">
               <!-- RD Mailform -->
