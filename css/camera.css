@@ -61,7 +61,8 @@
   display: none;
 }
 
-.cameraCont, .cameraContents {
+.cameraCont,
+.cameraContents {
   height: 100%;
   position: relative;
   width: 100%;
@@ -221,7 +222,8 @@
   min-width: 300px;
 }
 
-.camera_pag:before, .camera_pag:after {
+.camera_pag:before,
+.camera_pag:after {
   display: table;
   content: "";
   line-height: 0;
@@ -281,7 +283,8 @@
   transition: 0.3s all ease;
 }
 
-.camera_pag_ul li.cameracurrent, .camera_pag_ul li:hover {
+.camera_pag_ul li.cameracurrent,
+.camera_pag_ul li:hover {
   background: #1caffc;
 }
 
@@ -335,7 +338,8 @@
   z-index: 999;
 }
 
-.onCamera:before, .onCamera:after {
+.onCamera:before,
+.onCamera:after {
   display: table;
   content: "";
   line-height: 0;
