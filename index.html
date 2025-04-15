@@ -132,60 +132,56 @@
           <h2 class="text-center" id="kontakt-id">Kontakt</h2>
           <div class="row offset-2">
             <div class="col-sm-6 col-sm-push-6">
-              <!-- RD Mailform -->
-              <form
-                class="rd-mailform-2 booking-form"
-                method="post"
-                action="bat/rd-mailform.php"
-              >
-                <!-- RD Mailform Type -->
-                <input type="hidden" name="form-type" value="contact" />
-                <!-- END RD Mailform Type -->
-                <fieldset>
-                  <label data-add-placeholder>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name:"
-                      data-constraints="@NotEmpty @LettersOnly"
-                    />
-                  </label>
-                  <label data-add-placeholder>
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder="Phone:"
-                      data-constraints="@NotEmpty @NumbersOnly"
-                    />
-                  </label>
-                  <label data-add-placeholder>
-                    <input
-                      type="text"
-                      name="email"
-                      placeholder="E-mail:"
-                      data-constraints="@NotEmpty @Email"
-                    />
-                  </label>
-                  <label data-add-placeholder>
-                    <textarea
-                      name="message"
-                      placeholder="Message:"
-                      data-constraints="@NotEmpty"
-                    ></textarea>
-                  </label>
-                  <div class="mfControls btn-group">
+              <div class="modal">
+                <p class="modal-text">
+                  Bitte benutzen Sie das untenstehende Formular, um mit uns
+                  Kontakt aufzunehmen. Geben Sie Ihren Namen, Ihre Telefonnummer
+                  und Ihre Nachricht ein und wir werden uns in Kürze bei Ihnen
+                  melden.
+                </p>
+                <form class="contact-form" name="contact-us_form">
+                  <div class="form-wraper-content">
+                    <label class="modal-form-label"
+                      ><input
+                        class="modal-input"
+                        type="text"
+                        name="user-name"
+                        placeholder="Ihr Name"
+                        required
+                        oninvalid="this.setCustomValidity('Bitte geben Sie Ihren Namen ein.')"
+                        oninput="this.setCustomValidity('')"
+                    /></label>
+                  </div>
+                  <div class="form-wraper-content">
+                    <label class="modal-form-label"
+                      ><input
+                        class="modal-input"
+                        type="tel"
+                        name="user-tell"
+                        placeholder="+49 151 12345678"
+                        pattern="^\+49\s?\d{3,4}\s?\d{6,8}$"
+                        required
+                        oninvalid="this.setCustomValidity('Bitte geben Sie eine gültige deutsche Telefonnummer ein (z. B. +49 151 12345678).')"
+                        oninput="this.setCustomValidity('')"
+                    /></label>
+                  </div>
+                  <div class="form-wraper-cont-comment">
+                    <label class="modal-form-label">
+                      <textarea
+                        class="modal-textarea"
+                        name="user-comment"
+                        placeholder="Ihre Nachricht"
+                      ></textarea>
+                    </label>
                     <button
-                      class="btn btn-lg btn-primary-variant-1"
+                      class="modal-submit button-section-hero"
                       type="submit"
                     >
                       Zurückrufen
                     </button>
                   </div>
-
-                  <div class="mfInfo"></div>
-                </fieldset>
-              </form>
-              <!-- END RD Mailform -->
+                </form>
+              </div>
             </div>
             <div class="col-sm-6 col-sm-pull-6">
               <address>
@@ -195,7 +191,11 @@
                       class="icon icon-xs icon-primary-variant-1 car-repire-icon-warehouse"
                     ></span>
                     <p>
-                      <a href="#">
+                      <a
+                        href="https://maps.app.goo.gl/1PjEUzvhSjMLVieH9"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Kurfürstenstraße 12, Düsseldorf 40211, Deutschland
                       </a>
                     </p>
